@@ -1,79 +1,53 @@
-import 'package:design_task/screens/task1/model/sub_model.dart';
+import 'package:design_task/screens/task1/widgets/choose_plan_card.dart';
+import 'package:design_task/screens/task1/widgets/plan_list.dart';
+import 'package:design_task/screens/task2/task2.dart';
 import 'package:flutter/material.dart';
 
-class Task1 extends StatefulWidget {
-const  Task1({super.key});
-
-  @override
-  State<Task1> createState() => _Task1State();
-}
-
-class _Task1State extends State<Task1> {
-  
-  
-  final SubModel sub =  SubModel(
-    title: 'Monthly',
-    subTitle: '-53% discount',
-    price: '\$10.90',
-    duration: 'every month',
-  );
-
-  int selected = 1 ;
+class Task1 extends StatelessWidget {
+  const Task1({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+
             children: [
-              Container(
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey.shade500),
-                  borderRadius: BorderRadius.circular(16),
+              ChoosePlanCard(),
+              SizedBox(height: 30),
+              PlanList(),
+              SizedBox(height: 50),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Task2(),
+                    ),
+                  );
+                },
+
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(255, 4, 117, 209),
+                  padding: EdgeInsets.symmetric(horizontal: 100, vertical: 14),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                 ),
-                child: ListTile(
-                  leading: Radio(value: 0, groupValue: selected, onChanged: (value) {
-                    setState(() {
-                   selected = value!;
-
-                    });
-                  },
-                  activeColor: Colors.blue,
-
-                  //
-                  ),
-                  title: Text(sub.title),
-                  titleTextStyle: TextStyle(
-                    fontSize: 22,
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  subtitle: Text(
-                    sub.subTitle,
-                    style: TextStyle(fontSize: 14, color: Colors.blueAccent),
-                  ),
-                  trailing: Column(
-                    children: [
-                      Text(
-                        sub.price,
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Text(
-                        sub.duration,
-                        style: TextStyle(fontSize: 12, color: Colors.black),
-                      ),
-                    ],
+                child: Center(
+                  child: Text(
+                    'Subscribe',
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
                 ),
               ),
-            
+              //
             ],
           ),
         ),
