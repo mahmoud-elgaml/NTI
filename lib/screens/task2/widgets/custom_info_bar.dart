@@ -1,3 +1,4 @@
+import 'package:design_task/screens/task3/task3.dart';
 import 'package:flutter/material.dart';
 
 class CustomInfoBar extends StatelessWidget {
@@ -20,7 +21,8 @@ class CustomInfoBar extends StatelessWidget {
           ),
           Text("Info", style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const Task3()));            },
             child: Text(
               'Done',
               style: TextStyle(color: Colors.blue, fontSize: 16, fontWeight: FontWeight.w900),
@@ -31,3 +33,4 @@ class CustomInfoBar extends StatelessWidget {
     );
   }
 }
+
