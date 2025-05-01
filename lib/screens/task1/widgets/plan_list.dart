@@ -35,7 +35,9 @@ class PlanList extends StatelessWidget {
           subModels.map((sub) {
             return Padding(
               padding: const EdgeInsets.all(8.0),
+
               child: CustomCard(
+                
                 title: sub.title,
                 subTitle: sub.subTitle,
                 price: sub.price,

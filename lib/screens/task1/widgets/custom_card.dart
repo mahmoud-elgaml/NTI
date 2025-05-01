@@ -29,28 +29,29 @@ class CustomCard extends StatelessWidget {
           //
         ),
         title: Text(title),
-        titleTextStyle: TextStyle(fontSize: 22,
-         color: Colors.black,
+        titleTextStyle: TextStyle(
+          fontSize: 22,
+          color: Colors.black,
           fontWeight: FontWeight.bold,
           //
-          ),
-        subtitle: Text(subTitle, style: TextStyle(fontSize: 14, 
-        color: Colors.blueAccent,
-        fontWeight: FontWeight.w500,
-          //
-        //
         ),
+        subtitle: Text(
+          subTitle,
+          style: TextStyle(
+            fontSize: 14,
+            color: Colors.blueAccent,
+            fontWeight: FontWeight.w500,
+            //
+            //
+          ),
         ),
         trailing: Column(
           children: [
             Text(
               price,
-              style: TextStyle(fontSize: 18, color: Colors.black, 
-              fontWeight: FontWeight.w900,
-              
-              ),
+              style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w900),
             ),
-            Text(duration, style: TextStyle(fontSize: 12, color: Colors.black)),
+            Expanded(child: Text(duration, style: TextStyle(fontSize: 12, color: Colors.black))),
           ],
         ),
       ),

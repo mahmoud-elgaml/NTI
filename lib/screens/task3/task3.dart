@@ -1,3 +1,4 @@
+import 'package:design_task/task4/my_basket.dart';
 import 'package:flutter/material.dart';
 
 class Task3 extends StatelessWidget {
@@ -62,7 +63,9 @@ class Task3 extends StatelessWidget {
                     side: BorderSide(color: Colors.orange),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => MyBasket()));
+                },
                 child: Padding(
                   padding: const EdgeInsets.symmetric( horizontal: 30.0,vertical: 10.0),
                   child: Text('Continue Shopping'),
